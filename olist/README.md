@@ -1,4 +1,4 @@
-[!mer](https://raw.githubusercontent.com/pauloreis-ds/olist/main/business_questions_insights/images/mer.png)
+![mer](https://raw.githubusercontent.com/pauloreis-ds/olist/main/business_questions_insights/images/mer.png)
 
 ## Metadata
 
@@ -10,6 +10,15 @@
 
 
 ### olist_customers_dataset.csv
+
+This dataset has information about the customer and its location.<br>
+Use it to identify unique customers in the orders dataset and to find the orders delivery location.
+
+At our system each order is assigned to a unique customerid.<br>
+This means that the same customer will get different ids for different orders.<br>
+The purpose of having a customerunique_id on the dataset is to allow you to identify<br>
+customers that made repurchases at the store. Otherwise you would find that each<br>
+order had a different customer associated with.
 
 **customer_id**: key to the orders dataset. Each order has a unique customer_id.
 
@@ -24,6 +33,10 @@
 
 ### olist_geolocation_dataset.csv
 
+This dataset has information Brazilian zip codes and its lat/lng coordinates.<br>
+Use it to plot maps and find distances between sellers and customers.
+
+
 **geolocation_zip_code_prefix**: first 5 digits of zip code
 
 **geolocation_lat**: latitude
@@ -36,6 +49,8 @@
 
 
 ### olist_order_items_dataset.csv
+
+This dataset includes data about the items purchased within each order.
 
 **order_id**: order unique identifier
 
@@ -53,6 +68,8 @@
 
 ### olist_order_payments_dataset.csv
 
+This dataset includes data about the orders payment options.
+
 **order_id**: unique identifier of an order.
 
 **payment_sequential**: a customer may pay an order with more than one payment method. If he does so, a sequence will be created to accommodate all payments.
@@ -64,6 +81,13 @@
 **payment_value**: transaction value.
 
 ### olist_order_reviews_dataset.csv
+
+This dataset includes data about the reviews made by the customers.<br>
+After a customer purchases the product from Olist Store a seller gets notified<br>
+to fulfill that order. Once the customer receives the product, or the estimated<br>
+delivery date is due, the customer gets a satisfaction survey by email where he can<br>
+give a note for the purchase experience and write down some comments.
+
 
 **review_id**: unique review identifier
 
@@ -80,6 +104,8 @@
 **review_answer_timestamp**: Shows satisfaction survey answer timestamp.
 
 ### olist_orders_dataset.csv
+
+This is the core dataset. From each order you might find all other information.
 
 **order_id**: unique identifier of the order.
 
@@ -98,6 +124,8 @@
 **order_estimated_delivery_date**: Shows the estimated delivery date that was informed to customer at the purchase moment.
 
 ### olist_products_dataset.csv
+
+This dataset includes data about the products sold by Olist.
 
 **product_id**: unique product identifier
 
@@ -119,6 +147,9 @@
 
 ### olist_sellers_dataset.csv
 
+This dataset includes data about the sellers that fulfilled orders made at Olist.<br>
+Use it to find the seller location and to identify which seller fulfilled each product.
+
 **seller_id**: seller unique identifier
 
 **seller_zip_code_prefix**: first 5 digits of seller zip code
@@ -128,6 +159,12 @@
 **seller_state**: seller state
 
 ### product_category_name_translation.csv
+
+Translates the productcategoryname to english.
+
+**product_category_name**: category name in Portuguese
+
+**product_category_name_english**: category name in English
 
 
 [Original Source](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce?select=olist_order_items_dataset.csv)
